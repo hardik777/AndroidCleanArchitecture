@@ -8,17 +8,13 @@ import com.gaur.mealsearch.domain.model.Meal
 
 class MealSearchAdapter : RecyclerView.Adapter<MealSearchAdapter.MyViewHolder>() {
 
-
-
-    private var listener :((Meal)->Unit)?=null
-
+    private var listener: ((Meal) -> Unit)? = null
     var list = mutableListOf<Meal>()
 
     fun setContentList(list: MutableList<Meal>) {
         this.list = list
         notifyDataSetChanged()
     }
-
 
     class MyViewHolder(val viewHolder: ViewHolderSearchListBinding) :
         RecyclerView.ViewHolder(viewHolder.root)
@@ -32,8 +28,8 @@ class MealSearchAdapter : RecyclerView.Adapter<MealSearchAdapter.MyViewHolder>()
         return MyViewHolder(binding)
     }
 
-    fun itemClickListener(l:(Meal)->Unit){
-        listener= l
+    fun itemClickListener(l: (Meal) -> Unit) {
+        listener = l
     }
 
     override fun onBindViewHolder(holder: MealSearchAdapter.MyViewHolder, position: Int) {
@@ -44,7 +40,6 @@ class MealSearchAdapter : RecyclerView.Adapter<MealSearchAdapter.MyViewHolder>()
                 it(this.list[position])
             }
         }
-
     }
 
     override fun getItemCount(): Int {

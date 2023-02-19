@@ -16,8 +16,7 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-object HIltModules {
-
+object HiltModules {
 
     @Provides
     @Singleton
@@ -38,6 +37,5 @@ object HIltModules {
     fun provideMealDetails(searchMealSearchAPI: MealSearchAPI): MealDetailsRepository {
         return MealDetailsRepositoryImpl(searchMealSearchAPI)
     }
-
 
 }

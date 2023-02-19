@@ -28,5 +28,4 @@ class GetMealDetailsUseCase @Inject constructor(private val repository: MealDeta
         }
     }
 
-
 }

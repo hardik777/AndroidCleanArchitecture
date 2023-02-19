@@ -13,7 +13,6 @@ import javax.inject.Inject
 
 class SearchMealsUseCase @Inject constructor(private val repository: MealSearchRepository) {
 
-
     operator fun invoke(q: String): Flow<Resource<List<Meal>>> = flow {
         try {
             emit(Resource.Loading())
@@ -29,6 +28,5 @@ class SearchMealsUseCase @Inject constructor(private val repository: MealSearchR
 
         }
     }
-
 
 }

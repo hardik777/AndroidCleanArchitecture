@@ -19,7 +19,7 @@ import kotlinx.coroutines.flow.collect
 class MealDetailsFragment : Fragment() {
 
     private var _binding: FragmentMealDetailsBinding? = null
-    val binding: FragmentMealDetailsBinding
+    private val binding: FragmentMealDetailsBinding
         get() = _binding!!
 
     private val viewModel: MealDetailsViewModel by viewModels()
@@ -28,7 +28,6 @@ class MealDetailsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -43,7 +42,6 @@ class MealDetailsFragment : Fragment() {
         args.mealId?.let {
             viewModel.getMealDetails(it)
         }
-
 
         lifecycle.coroutineScope.launchWhenCreated {
             viewModel.mealDetails.collect {
@@ -62,8 +60,5 @@ class MealDetailsFragment : Fragment() {
         binding.detailsBackArrow.setOnClickListener {
             findNavController().popBackStack()
         }
-
-
     }
-
 }

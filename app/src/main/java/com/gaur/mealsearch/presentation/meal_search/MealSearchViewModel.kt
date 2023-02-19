@@ -17,10 +17,8 @@ class MealSearchViewModel @Inject constructor(
     private val mealSearchMealsUseCase: SearchMealsUseCase
 ) : ViewModel() {
 
-
     private val _mealSearchList = MutableStateFlow<MealSearchState>(MealSearchState())
     val mealSearchList: StateFlow<MealSearchState> = _mealSearchList
-
 
     fun getSearchMeals(s: String) {
         mealSearchMealsUseCase(s).onEach {
@@ -37,6 +35,4 @@ class MealSearchViewModel @Inject constructor(
             }
         }.launchIn(viewModelScope)
     }
-
-
 }
